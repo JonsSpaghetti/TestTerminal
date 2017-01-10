@@ -22,7 +22,7 @@
 		<div class="gameWindow">
 			<ul class="gameText">
 			</ul>
-			<div id="inputArea" data-ng-app="textGame">
+			<div id="inputArea" data-ng-app="textGame" data-ng-controller="ctl">
 				<!--this next line is ugly bc spacing requires it.  And HTML is dumb.-->
 				<span id="arrow">></span><span id="mirrorText">{{ input }}</span><span id="caret">_</span>
 				<input type="text" id="playerInput" data-ng-model="input" data-ng-trim="false"></input>
