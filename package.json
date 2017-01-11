@@ -1,0 +1,23 @@
+{
+  "name": "textgame",
+  "version": "1.0.0",
+  "description": "text game/terminal framework",
+  "main": "app.js",
+  "scripts": {
+    "test": "console.log(\"test command\");"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonsSpaghetti/TestTerminal.git"
+  },
+  "author": "Jon Tan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonsSpaghetti/TestTerminal/issues"
+  },
+  "homepage": "https://github.com/JonsSpaghetti/TestTerminal#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "http": "0.0.0"
+  }
+}
