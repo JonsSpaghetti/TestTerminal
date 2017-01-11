@@ -1,0 +1,59 @@
+h1 {
+	color : white;
+}
+body {
+	font-family : monospace;
+	background-color : black;
+	font-size : 16;
+}
+.gameWindow {
+	width : 60vw;
+	height : 40 vh;
+	background-color :  black;
+	color : white;
+	opacity : 80%;
+
+}
+
+.gameText {
+	list-style : none;
+	padding : none;
+	padding : 0;
+	margin-bottom : 0;
+}
+
+#arrow, #mirrorText {
+	background-color : black;
+	border : none;
+	color : white;
+	font-size : 16;
+	font-family : monospace;
+	width : 90%;
+}
+
+#caret {
+	font-weight : bold;
+	background-color: white;
+	animation: blink-animation 2s steps(5, start) infinite;
+	-webkit-animation: blink-animation 2s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+	to {
+		visibility: hidden;
+	}
+}
+
+@-webkit-keyframes blink-animation {
+	to {
+		visibility: hidden;
+	}
+}
+
+#playerInput {
+	opacity : 0;
+}
+
+.inputArea {
+	/* placeholder for now */
+}
