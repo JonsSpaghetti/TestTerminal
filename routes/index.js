@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var cmdHandle = require('../public/cmdHandle.js');
-var cmds = require('../public/cmds.js');
+var cmdHandle = require('../public/js/cmdHandle.js');
+var cmds = require('../public/js/cmds.js');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('public/index.html');

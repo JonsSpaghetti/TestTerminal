@@ -1,23 +1,17 @@
 {
   "name": "textgame",
-  "version": "1.0.0",
-  "description": "text game/terminal framework",
-  "main": "app.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "console.log(\"test command\");"
+    "start": "node ./bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JonsSpaghetti/TestTerminal.git"
-  },
-  "author": "Jon Tan",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JonsSpaghetti/TestTerminal/issues"
-  },
-  "homepage": "https://github.com/JonsSpaghetti/TestTerminal#readme",
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "http": "0.0.0"
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0"
   }
 }

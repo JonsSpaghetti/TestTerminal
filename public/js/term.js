@@ -18,7 +18,7 @@ $(function init () {
 		caret.style.visibility = "visible";
 		clearTimeout(timeoutHandler);
 		timeoutHandler = setTimeout(function () {
-			unpause(caret)
+			unpause(caret);
 		}, 500);
 		if (event.which == 13){
 			var pInput = $('#playerInput')[0];
@@ -39,12 +39,12 @@ $(function init () {
 	//This will be an object used as a dict
 	//Key-value pairs will be cmd-action/output.
 	//output can be a string or a callback function.
-	//TODO - convert the command object calls to server-side logic
-	cmds = {
-		help : ['Possible commands :','test'],
-		katherine : "Is pretty chill I guess.  Is not a proper noun.",
-		test : "testin 1,2,3"
-	}
+	//TODO - convert the command object calls to server-side logic - DONE.
+// 	cmds = {
+// 		help : ['Possible commands :','test'],
+// 		katherine : "Is pretty chill I guess.  Is not a proper noun.",
+// 		test : "testin 1,2,3"
+// 	}
 });
 
 //unpause caret blinking animation
@@ -52,30 +52,30 @@ function unpause(element) {
 	element.style.webkitAnimationPlayState = "running";
 }
 
-//takes cmd and handles output based on dictionary object passed in.
-function cmdHandler(cmd, dict) {
-	if (dict.hasOwnProperty(cmd)) {
-		if (typeof(dict[cmd]) != 'object'){
-			return dict[cmd];
-		}
-		else if(typeof(dict[cmd]) == 'object'){
-			var rVal = "";
-			for (line in dict[cmd]){
-				if( line != (dict[cmd].length - 1)) {
-					rVal += dict[cmd][line] + "<br>>>";
-				}
-				else {
-					rVal += dict[cmd][line];
-				}
-			}
-			return rVal;
+// //takes cmd and handles output based on dictionary object passed in.
+// function cmdHandler(cmd, dict) {
+// 	if (dict.hasOwnProperty(cmd)) {
+// 		if (typeof(dict[cmd]) != 'object'){
+// 			return dict[cmd];
+// 		}
+// 		else if(typeof(dict[cmd]) == 'object'){
+// 			var rVal = "";
+// 			for (var line in dict[cmd]){
+// 				if( line != (dict[cmd].length - 1)) {
+// 					rVal += dict[cmd][line] + "<br>>>";
+// 				}
+// 				else {
+// 					rVal += dict[cmd][line];
+// 				}
+// 			}
+// 			return rVal;
 
-		}
-	}
-	else {
-		return "Command not recognized.";
-	}
-}
+// 		}
+// 	}
+// 	else {
+// 		return "Command not recognized.";
+// 	}
+// }
 
 //serverSend - tries to ajax the data from the input to the server for processing.
 function serverSend(cmd) {
@@ -98,5 +98,11 @@ function serverSend(cmd) {
 }
 
 function handleData(val) {
-	$('.gameText').append("<li>>>" + val  + "</li>");
+	if (typeof(val) == 'object'){
+		//this means that the response is a command to run, not just text to display.
+		eval(val.code  + val.call)
+	}
+	else{
+		$('.gameText').append("<li>>>" + val  + "</li>");
+	}
 }
